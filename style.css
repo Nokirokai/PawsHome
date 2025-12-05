@@ -307,6 +307,14 @@ body {
     color: #e07843;
 }
 
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+    color: #999;
+    font-size: 0.9rem;
+}
+
 .contact-info p {
     margin-bottom: 0.5rem;
     color: #666;
@@ -455,6 +463,8 @@ body {
     .footer-grid {
         grid-template-columns: 1fr;
     }
+
+    
 }
 
 /* Tablet (2 columns) */
