@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Pet - PawsHome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="D:\USER FILES\Desktop\webdev_finalsporject\main-logo.png" alt="PawsHome Logo">
+                    <span>PawsHome</span>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="findapet.html">Find a Pet</a></li>
+                    <li><a href="surrender.html">Surrender Pet</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <h2>Adoption Application</h2>
+        <p>Please fill out this form to start the adoption process. We'll review your application and contact you within 2-3 business days.</p>
+        
+        <form>
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="text" id="phone" name="text" required>
+
+            <label for="housing">Housing *</label>
+            <input type="text" id="housing" name="housing" required>
+
+            <label for="address">Address *</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="reason">Why do you want to adopt this pet? (brief) *</label>
+            <textarea id="reason" name="reason" required></textarea>
+
+            <div class="buttons">
+                <button type="submit" class="submit-btn">Submit Application</button>
+                <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <section class="find-pet-header">
+        <div class="container">
+            <h1>Find Your Furrfect Pet</h1>
+            <p>Browse our wonderful animals waiting for their forever homes. Each pet<br>has been health-checked and is ready for adoption.</p>
+        </div>
+    </section>
+
+    <section class="pets-section">
+        <div class="container">
+            <div class="pets-grid">
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1611250282006-4484dd3fba6b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Buddy">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Buddy</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Golden Retriever Mix</p>
+                            <p><strong>Age:</strong> 2 years</p>
+                            <p><strong>Size:</strong> Large</p>
+                            <p class="pet-trait">🐕 Non-Shedder</p>
+                        </div>
+                        <p class="pet-description">Buddy is a friendly and energetic dog who loves playing fetch and going on walks. He's great with kids and other dogs.</p>
+                        <button class="btn-adopt">Adopt Buddy</button>
+                    </div>
+                </div>
+                
+
+                <div class="pet-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1764187763179-f2ad144c15f9?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Luna">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Luna</h3>
+                            <span class="pet-badge cat">Cat</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Domestic Shorthair</p>
+                            <p><strong>Age:</strong> 1 year</p>
+                            <p><strong>Size:</strong> Medium</p>
+                            <p class="pet-trait">🏠 Foster Home</p>
+                        </div>
+                        <p class="pet-description">Luna is a sweet and playful kitten who loves to cuddle. She would do well in a quiet home with gentle handling.</p>
+                        <button class="btn-adopt">Adopt Luna</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src=" https://images.unsplash.com/photo-1593991910463-03658d3de800?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Max">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Max</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Labrador Mix</p>
+                            <p><strong>Age:</strong> 3 years</p>
+                            <p><strong>Size:</strong> Large</p>
+                            <p class="pet-trait">🐕 Main Shelter</p>
+                        </div>
+                        <p class="pet-description">Max is a calm and gentle dog who loves belly rubs and relaxing in the sun. Perfect for a laid-back companion.</p>
+                        <button class="btn-adopt">Adopt Max</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1568393691080-d016376b767d?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bella">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Bella</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Border Collie</p>
+                            <p><strong>Age:</strong> 4 years</p>
+                            <p><strong>Size:</strong> Medium</p>
+                            <p class="pet-trait">🐕 Main Shelter</p>
+                        </div>
+                        <p class="pet-description">Bella is an intelligent and active dog who loves learning new tricks and playing frisbee.</p>
+                        <button class="btn-adopt">Adopt Bella</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1606213651356-0272cc0becd2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Whiskers">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Whiskers</h3>
+                            <span class="pet-badge cat">Cat</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Maine Coon</p>
+                            <p><strong>Age:</strong> 5 years</p>
+                            <p><strong>Size:</strong> Large</p>
+                            <p class="pet-trait">🏠 Foster Home</p>
+                        </div>
+                        <p class="pet-description">Whiskers is a gentle giant who loves to be brushed and enjoys sunny naps.</p>
+                        <button class="btn-adopt">Adopt Whiskers</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1695471828735-1a451dc68c45?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Charlie">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Charlie</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Husky</p>
+                            <p><strong>Age:</strong> 1 year</p>
+                            <p><strong>Size:</strong> Medium</p>
+                            <p class="pet-trait">🐕 Main Shelter</p>
+                        </div>
+                        <p class="pet-description">Charlie is a playful puppy who loves treats and belly rubs. He's looking for a patient family to help with training.</p>
+                        <button class="btn-adopt">Adopt Charlie</button>
+                    </div>
+                </div>
+
+                <!-- Page 2 Pets (Hidden Initially) -->
+                <div class="pet-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1694198817869-196127afd4ef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mittens">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Mittens</h3>
+                            <span class="pet-badge cat">Cat</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Tuxedo Cat</p>
+                            <p><strong>Age:</strong> 2 years</p>
+                            <p><strong>Size:</strong> Small</p>
+                            <p class="pet-trait">🏠 Foster Home</p>
+                        </div>
+                        <p class="pet-description">Mittens is a shy but affectionate cat who enjoys quiet spaces and gentle petting. Perfect for a calm household.</p>
+                        <button class="btn-adopt">Adopt Mittens</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1760121635150-57be3a1097e1?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rocky">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Rocky</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Boxer Mix</p>
+                            <p><strong>Age:</strong> 5 years</p>
+                            <p><strong>Size:</strong> Large</p>
+                            <p class="pet-trait">🐕 Main Shelter</p>
+                        </div>
+                        <p class="pet-description">Rocky is a loyal and protective dog who loves his family. He's well-trained and great with older children.</p>
+                        <button class="btn-adopt">Adopt Rocky</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1604916287784-c324202b3205?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Shadow">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Shadow</h3>
+                            <span class="pet-badge cat">Cat</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Black Cat</p>
+                            <p><strong>Age:</strong> 3 years</p>
+                            <p><strong>Size:</strong> Medium</p>
+                            <p class="pet-trait">🏠 Foster Home</p>
+                        </div>
+                        <p class="pet-description">Shadow is an independent yet loving cat who enjoys window perches and laser pointer games.</p>
+                        <button class="btn-adopt">Adopt Shadow</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1568748159068-f0d509050e0a?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Daisy">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Daisy</h3>
+                            <span class="pet-badge">Dog</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Beagle</p>
+                            <p><strong>Age:</strong> 4 years</p>
+                            <p><strong>Size:</strong> Medium</p>
+                            <p class="pet-trait">🐕 Main Shelter</p>
+                        </div>
+                        <p class="pet-description">Daisy is a sweet and curious dog with a nose for adventure. She loves exploring and sniffing everything!</p>
+                        <button class="btn-adopt">Adopt Daisy</button>
+                    </div>
+                </div>
+
+                <div class="pet-card">
+                    <img src="https://images.unsplash.com/photo-1661702592033-b61a8f1f4c50?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ginger">
+                    <div class="pet-info">
+                        <div class="pet-header">
+                            <h3>Ginger</h3>
+                            <span class="pet-badge cat">Cat</span>
+                        </div>
+                        <div class="pet-details">
+                            <p><strong>Breed:</strong> Orange Tabby</p>
+                            <p><strong>Age:</strong> 1 year</p>
+                            <p><strong>Size:</strong> Small</p>
+                            <p class="pet-trait">🏠 Foster Home</p>
+                        </div>
+                        <p class="pet-description">Ginger is a playful and energetic kitten who loves chasing toys and climbing cat trees. Full of personality!</p>
+                        <button class="btn-adopt">Adopt Ginger</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn">← Previous</button>
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <button class="page-btn">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="not-found-section">
+        <div class="container">
+            <h2>Don't See the Right Pet?</h2>
+            <p>New pets arrive regularly. Check back often or contact us to let us know what you're looking for.</p>
+            <button class="btn-contact">Contact Us</button>
+        </div>
+    </section>
+    
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html" class="active">Home</a></li>
+                        <li><a href="findapet.html">Find a Pet</a></li>
+                        <li><a href="surrender.html">Surrender Pet</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><span class="icon">📍</span> 123 Pet Rescue Lane<br>Compassion City, PC 12345</p>
+                        <p><span class="icon">📞</span> (555) PAW-HOME</p>
+                        <p><span class="icon">✉️</span> hello@pawshome.org</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                    <p class="social-text">Stay updated with our latest rescues and adoption success stories!</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright ©2025 PawsHome All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

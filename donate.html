@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - PawsHome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="D:\USER FILES\Desktop\webdev_finalsporject\main-logo.png" alt="PawsHome Logo">
+                    <span>PawsHome</span>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="findapet.html">Find a Pet</a></li>
+                    <li><a href="surrender.html">Surrender Pet</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="donate-header">
+        <div class="container">
+            <div class="donate-icon">
+                <img src="D:\USER FILES\Desktop\webdev_finalsporject\main-logo.png" alt="Paw Icon">
+            </div>
+            <h1>Support Our Mission</h1>
+            <p>Your generous donation helps us rescue, care for, and find loving homes<br>for animals in need. Every dollar makes a difference.</p>
+        </div>
+    </section>
+
+    <section class="donation-form-section">
+        <div class="container">
+            <div class="donation-form-card">
+                <h2>Make a Donation</h2>
+                <p>Choose your donation amount and frequency</p>
+
+                <form class="donation-form">
+                    <div class="donation-type">
+                        <h3>Donation Type</h3>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="donationType" value="one-time" checked>
+                                <span>One-time donation</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="donationType" value="monthly">
+                                <span>Monthly donation (Paws Club)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="donation-amounts">
+                        <h3>Select Amount</h3>
+                        <div class="amount-grid">
+                            <label class="amount-option">
+                                <input type="radio" name="amount" value="100">
+                                <div class="amount-card">
+                                    <h4>₱100</h4>
+                                    <p>Provides food for a pet for one week</p>
+                                </div>
+                            </label>
+                            <label class="amount-option">
+                                <input type="radio" name="amount" value="250">
+                                <div class="amount-card">
+                                    <h4>₱250</h4>
+                                    <p>Covers basic medical check-up</p>
+                                </div>
+                            </label>
+                            <label class="amount-option">
+                                <input type="radio" name="amount" value="500">
+                                <div class="amount-card">
+                                    <h4>₱500</h4>
+                                    <p>Supports spay/neuter surgery</p>
+                                </div>
+                            </label>
+                            <label class="amount-option">
+                                <input type="radio" name="amount" value="1250">
+                                <div class="amount-card">
+                                    <h4>₱1250</h4>
+                                    <p>Funds emergency medical treatment</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="custom-amount">
+                        <h3>Or enter custom amount</h3>
+                        <input type="number" placeholder="0.00" class="custom-amount-input">
+                    </div>
+
+                    <button type="button" class="btn-donate" id="donateBtn">Donate</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="wish-list-section">
+        <div class="container">
+            <h2>Donation Wish List</h2>
+            <p>Items we always need</p>
+
+            <div class="wish-list-grid">
+                <div class="wish-list-column">
+                    <h3>Food & Treats</h3>
+                    <ul>
+                        <li>Dry dog and cat food</li>
+                        <li>Wet food and treats</li>
+                        <li>Puppy and kitten food</li>
+                        <li>Special diet foods</li>
+                    </ul>
+                </div>
+                <div class="wish-list-column">
+                    <h3>Supplies</h3>
+                    <ul>
+                        <li>Blankets and towels</li>
+                        <li>Toys and enrichment items</li>
+                        <li>Cleaning supplies</li>
+                        <li>Cat litter</li>
+                    </ul>
+                </div>
+                <div class="wish-list-column">
+                    <h3>Medical</h3>
+                    <ul>
+                        <li>First aid supplies</li>
+                        <li>Medications</li>
+                        <li>Medical equipment</li>
+                        <li>Surgical supplies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">💳</div>
+                <h2>Credit Card Payment</h2>
+                <p>Enter your card details to complete the donation</p>
+            </div>
+            <form class="payment-form">
+                <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="payment-buttons">
+                    <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+                    <button type="button" class="btn-complete" id="completeBtn">Complete Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your generous donation. Your support helps us rescue, care for, and find loving homes for animals in need.</p>
+            <button class="btn-close-success" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="findapet.html">Find a Pet</a></li>
+                        <li><a href="surrender.html">Surrender Pet</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><span class="icon">📍</span> 123 Pet Rescue Lane<br>Compassion City, PC 12345</p>
+                        <p><span class="icon">📞</span> (555) PAW-HOME</p>
+                        <p><span class="icon">✉️</span> hello@pawshome.org</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                    <p class="social-text">Stay updated with our latest rescues and adoption success stories!</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright ©2025 PawsHome All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
