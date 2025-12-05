@@ -335,8 +335,6 @@ body {
     transition: background 0.3s;
 }
 
-/* Add this to your existing style.css file, replacing the current .social-links styles */
-
 .social-links {
     display: flex;
     gap: 1rem;
