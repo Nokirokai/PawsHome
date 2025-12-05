@@ -335,21 +335,57 @@ body {
     transition: background 0.3s;
 }
 
+/* Add this to your existing style.css file, replacing the current .social-links styles */
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 20px;
+}
+
 .social-links a:hover {
-    background: #c56535;
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
-.social-text {
-    color: #666;
-    font-size: 0.9rem;
+/* Facebook */
+.social-links a.facebook {
+    background: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #ddd;
-    color: #999;
-    font-size: 0.9rem;
+/* Instagram */
+.social-links a.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+}
+
+/* Twitter/X */
+.social-links a.twitter {
+    background: #000000;
+    color: white;
+    font-weight: bold;
+}
+
+/* TikTok */
+.social-links a.tiktok {
+    background: #000000;
+    color: white;
+    font-size: 24px;
 }
 
 /* Mobile (1 column) */
