@@ -263,6 +263,16 @@ const adoptionForm = adoptionModal ? adoptionModal.querySelector('form') : null;
 const adoptionCancelBtn = adoptionModal ? adoptionModal.querySelector('.cancel-btn') : null;
 const adoptionSubmitBtn = adoptionModal ? adoptionModal.querySelector('.submit-btn') : null;
 
+// Real-time phone number validation - only allow numbers
+if (adoptionForm) {
+    const phoneInput = adoptionForm.querySelector('input[id="phone"]');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+    }
+}
+
 // Open adoption modal when any "Adopt" button is clicked
 if (adoptBtns.length > 0 && adoptionModal) {
     adoptBtns.forEach(btn => {
@@ -318,24 +328,96 @@ if (adoptionForm) {
             input.style.border = '';
         });
 
-        // Validate all required fields
-        const requiredFields = adoptionForm.querySelectorAll('input[required], textarea[required]');
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
+        // Full Name validation
+        const fullnameInput = adoptionForm.querySelector('input[id="fullname"]');
+        if (fullnameInput) {
+            const nameValue = fullnameInput.value.trim();
+            const nameRegex = /^[a-zA-Z\s]{2,}$/;
+            if (!nameValue) {
                 isValid = false;
-                field.style.border = '2px solid red';
-                showError(field, 'This field is required');
+                fullnameInput.style.border = '2px solid red';
+                showError(fullnameInput, 'Full name is required');
+            } else if (!nameRegex.test(nameValue)) {
+                isValid = false;
+                fullnameInput.style.border = '2px solid red';
+                showError(fullnameInput, 'Name must contain only letters and spaces (minimum 2 characters)');
             }
-        });
+        }
 
         // Email validation
         const emailInput = adoptionForm.querySelector('input[type="email"]');
-        if (emailInput && emailInput.value.trim()) {
+        if (emailInput) {
+            const emailValue = emailInput.value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value.trim())) {
+            if (!emailValue) {
+                isValid = false;
+                emailInput.style.border = '2px solid red';
+                showError(emailInput, 'Email address is required');
+            } else if (!emailRegex.test(emailValue)) {
                 isValid = false;
                 emailInput.style.border = '2px solid red';
                 showError(emailInput, 'Please enter a valid email address');
+            }
+        }
+
+        // Phone number validation
+        const phoneInput = adoptionForm.querySelector('input[id="phone"]');
+        if (phoneInput) {
+            const phoneValue = phoneInput.value.trim();
+            const phoneRegex = /^\d{10,15}$/;
+            if (!phoneValue) {
+                isValid = false;
+                phoneInput.style.border = '2px solid red';
+                showError(phoneInput, 'Phone number is required');
+            } else if (!phoneRegex.test(phoneValue)) {
+                isValid = false;
+                phoneInput.style.border = '2px solid red';
+                showError(phoneInput, 'Phone number must be 10-15 digits');
+            }
+        }
+
+        // Housing validation
+        const housingInput = adoptionForm.querySelector('input[id="housing"]');
+        if (housingInput) {
+            const housingValue = housingInput.value.trim();
+            if (!housingValue) {
+                isValid = false;
+                housingInput.style.border = '2px solid red';
+                showError(housingInput, 'Housing type is required');
+            } else if (housingValue.length < 3) {
+                isValid = false;
+                housingInput.style.border = '2px solid red';
+                showError(housingInput, 'Please provide more details about your housing');
+            }
+        }
+
+        // Address validation
+        const addressInput = adoptionForm.querySelector('textarea[id="address"]');
+        if (addressInput) {
+            const addressValue = addressInput.value.trim();
+            if (!addressValue) {
+                isValid = false;
+                addressInput.style.border = '2px solid red';
+                showError(addressInput, 'Address is required');
+            } else if (addressValue.length < 10) {
+                isValid = false;
+                addressInput.style.border = '2px solid red';
+                showError(addressInput, 'Please provide a complete address (minimum 10 characters)');
+            }
+        }
+
+        // Reason validation
+        const reasonInput = adoptionForm.querySelector('textarea[id="reason"]');
+        if (reasonInput) {
+            const reasonValue = reasonInput.value.trim();
+            if (!reasonValue) {
+                isValid = false;
+                reasonInput.style.border = '2px solid red';
+                showError(reasonInput, 'Please tell us why you want to adopt');
+            } else if (reasonValue.length < 20) {
+                isValid = false;
+                reasonInput.style.border = '2px solid red';
+                showError(reasonInput, 'Please provide more details (minimum 20 characters)');
             }
         }
 
