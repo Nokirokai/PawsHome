@@ -64,9 +64,49 @@ const closeSuccessBtn = document.getElementById('closeSuccessBtn');
 
 const paymentForm = document.querySelector('#paymentModal form'); // form inside modal
 
-// Open payment modal
+// Donation amount selection logic
+const amountRadios = document.querySelectorAll('input[name="amount"]');
+const customAmountInput = document.querySelector('.custom-amount-input');
+
+// When custom amount is entered, deselect all amount radios
+if (customAmountInput) {
+    customAmountInput.addEventListener('input', () => {
+        if (customAmountInput.value) {
+            amountRadios.forEach(radio => {
+                radio.checked = false;
+            });
+        }
+    });
+}
+
+// When an amount radio is selected, clear custom amount
+if (amountRadios.length > 0) {
+    amountRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked && customAmountInput) {
+                customAmountInput.value = '';
+            }
+        });
+    });
+}
+
+// Open payment modal with validation
 if (donateBtn) {
     donateBtn.addEventListener('click', () => {
+        // Check if either amount is selected or custom amount is entered
+        const selectedAmount = document.querySelector('input[name="amount"]:checked');
+        const customAmount = customAmountInput ? customAmountInput.value : '';
+
+        if (!selectedAmount && !customAmount) {
+            alert('Please select or enter a donation amount');
+            return;
+        }
+
+        if (customAmount && parseFloat(customAmount) <= 0) {
+            alert('Please enter a valid donation amount');
+            return;
+        }
+
         paymentModal.classList.add('active');
     });
 }
@@ -79,15 +119,6 @@ if (donateBtn) {
         });
     }
 });
-
-// Complete button triggers form submission
-if (completeBtn) {
-    completeBtn.addEventListener('click', () => {
-        if (paymentForm) {
-            paymentForm.dispatchEvent(new Event('submit')); // trigger validation
-        }
-    });
-}
 
 // Close success modal
 if (closeSuccessBtn) {
@@ -107,7 +138,40 @@ if (closeSuccessBtn) {
     }
 });
 
-// Text input-only validation on form submit
+// Real-time input formatting for payment form
+if (paymentForm) {
+    // Card number formatting and validation
+    const cardInput = paymentForm.querySelector('input[placeholder="1234 5678 9012 3456"]');
+    if (cardInput) {
+        cardInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+    }
+
+    // Expiry date formatting and validation
+    const expiryInput = paymentForm.querySelector('input[placeholder="MM/YY"]');
+    if (expiryInput) {
+        expiryInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+        });
+    }
+
+    // CVV validation - only numbers
+    const cvvInput = paymentForm.querySelector('input[placeholder="123"]');
+    if (cvvInput) {
+        cvvInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+    }
+}
+
+// Form validation on submit
 if (paymentForm) {
     paymentForm.addEventListener('submit', (e) => {
         e.preventDefault(); // prevent page reload
@@ -117,6 +181,12 @@ if (paymentForm) {
         // Clear previous error messages
         const errorMsgs = paymentForm.querySelectorAll('.error-msg');
         errorMsgs.forEach(msg => msg.remove());
+
+        // Clear previous error borders
+        const inputs = paymentForm.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.style.border = '';
+        });
 
         // Name on Card validation
         const nameInput = paymentForm.querySelector('input[placeholder="John Doe"]');
