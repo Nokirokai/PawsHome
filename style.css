@@ -10,13 +10,13 @@ body {
     line-height: 1.6;
     background-color: #fdf6f0;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Trebuchet MS', 'Verdana', sans-serif;
-    font-weight: bold;
 }
 
-/* Paragraphs */
-body, p {
+
+p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
